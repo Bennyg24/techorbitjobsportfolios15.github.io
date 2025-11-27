@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordPress Developer Portfolio - Samuel Hughes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@700&display=swap" rel-stylesheet>
+    <style>
+        /* --- WordPress Developer Design: Bold, Trustworthy, WP Colors --- */
+        :root {
+            --wp-primary: #0073AA; /* WordPress Blue */
+            --wp-secondary: #FF8C00; /* Dark Orange/Accent */
+            --wp-background: #F8F8F8;
+            --wp-text: #333;
+            --wp-card-bg: white;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--wp-text);
+            background: var(--wp-background);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header/Hero Section --- */
+        .wp-header {
+            padding: 60px 0;
+            background: var(--wp-primary);
+            color: white;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Top Left Rectangular Image */
+        .profile-img-container {
+            width: 280px;
+            height: 330px;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-bottom: 8px solid var(--wp-secondary);
+        }
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(10%) brightness(1.1);
+        }
+
+        .wp-content {
+            padding-left: 320px; /* Offset for the image */
+        }
+
+        #dynamicGreeting {
+            font-size: 1.3em;
+            color: var(--wp-secondary);
+            margin-bottom: 5px;
+        }
+
+        .wp-header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4em;
+            font-weight: 700;
+            margin-bottom: 5px;
+            line-height: 1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .wp-header h2 {
+            font-size: 1.5em;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        /* --- Main Sections --- */
+        .wp-section {
+            padding: 70px 0;
+            text-align: center;
+        }
+
+        .wp-section h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5em;
+            color: var(--wp-primary);
+            margin-bottom: 40px;
+        }
+
+        .wp-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .wp-skill-card {
+            background: var(--wp-card-bg);
+            padding: 25px;
+            border-top: 5px solid var(--wp-secondary);
+            text-align: left;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .wp-skill-card h4 {
+            color: var(--wp-primary);
+        }
+        
+        /* Project Specific Styles */
+        .wp-project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            text-align: left;
+        }
+        .wp-project-card {
+            background: var(--wp-card-bg);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .wp-project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--wp-secondary);
+        }
+        .wp-project-card-content {
+            padding: 20px;
+        }
+        .wp-project-card-content h4 {
+            color: var(--wp-primary);
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        .wp-project-card-content a {
+            font-weight: 700;
+            color: var(--wp-secondary);
+        }
+
+        /* --- Call to Action (CTA) --- */
+        .wp-cta-section {
+            background: var(--wp-secondary);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        .wp-cta-section h3 {
+            font-size: 2.2em;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .wp-cta-btn {
+            display: inline-block;
+            background: var(--wp-primary);
+            color: white;
+            padding: 15px 45px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+        .wp-cta-btn:hover {
+            background: var(--wp-primary);
+            color: var(--wp-secondary);
+            transform: scale(1.05);
+        }
+
+        /* --- Responsiveness --- */
+        @media (max-width: 768px) {
+            .wp-header {
+                padding: 350px 20px 60px;
+                text-align: center;
+            }
+            .profile-img-container {
+                width: 100%;
+                height: 300px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .wp-content {
+                padding-left: 0;
+            }
+            .wp-header h1 {
+                font-size: 3em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="about" class="wp-header">
+        <div class="profile-img-container">
+            <img src="https://techorbitjobs.com/wp-content/uploads/2025/10/testimonial-1.webp" alt="Samuel Hughes Profile Picture">
+        </div>
+        <div class="container wp-content">
+            <div id="dynamicGreeting"></div>
+            <h1>I'M SAMUEL HUGHES</h1>
+            <h2>// RELIABLE WORDPRESS DEVELOPER //</h2>
+            <p>I build secure, high-speed, and custom-functionality WordPress sites, specializing in Gutenberg, custom theme development, and performance optimization.</p>
+        </div>
+    </header>
+
+    <section id="skills" class="wp-section">
+        <div class="container">
+            <h3>CORE WORDPRESS EXPERTISE</h3>
+            <div class="wp-skills-grid">
+                <div class="wp-skill-card"><h4>Custom Development</h4><p>PHP, Theme/Plugin Development, Hooks & Filters</p></div>
+                <div class="wp-skill-card"><h4>Performance</h4><p>Caching, Asset Optimization, Core Web Vitals</p></div>
+                <div class="wp-skill-card"><h4>E-commerce</h4><p>WooCommerce, Custom Integrations, Payment Gateways</p></div>
+                <div class="wp-skill-card"><h4>Front End</h4><p>HTML5, CSS3/SASS, JavaScript, Responsive Design</p></div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" class="wp-section">
+        <div class="container">
+            <h3>FEATURED PROJECTS</h3>
+            <div class="wp-project-grid">
+                <div class="wp-project-card">
+                    <img src="project1.png" alt="Custom WooCommerce Storefront Screenshot">
+                    <div class="wp-project-card-content">
+                        <h4>High-Volume E-commerce Store</h4>
+                        <p>Developed a fully customized WooCommerce theme and optimized server response time for high traffic.</p>
+                        <a href="[Link to Live Site]">View Live Project</a>
+                    </div>
+                </div>
+                <div class="wp-project-card">
+                    <img src="project2.png" alt="Custom Plugin Interface Screenshot">
+                    <div class="wp-project-card-content">
+                        <h4>Proprietary Data Management Plugin</h4>
+                        <p>Built a secure custom WordPress plugin to manage specific client data within the admin dashboard.</p>
+                        <a href="[Link to Case Study]">View Case Study</a>
+                    </div>
+                </div>
+                <div class="wp-project-card">
+                    <img src="project3.png"
+
+[Image of Corporate Blog Mobile View]
+" alt="Corporate Blog Mobile View">
+                    <div class="wp-project-card-content">
+                        <h4>Optimized Corporate Blog</h4>
+                        <p>Launched a secure, SEO-optimized corporate blog using custom Gutenberg blocks for content creation.</p>
+                        <a href="[Link to GitHub]">View Code Snippets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wp-cta-section">
+        <div class="container">
+            <h3>READY FOR A FASTER, MORE SECURE WEBSITE?</h3>
+            <a href="[Link to Contact/Project Inquiry]" class="wp-cta-btn">BOOK SAMUEL'S SERVICES</a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const greetingElement = document.getElementById('dynamicGreeting');
+            const date = new Date();
+            const hour = date.getHours();
+            let greeting;
+
+            if (hour < 12) {
+                greeting = 'Good morning!';
+            } else if (hour < 18) {
+                greeting = 'Good afternoon!';
+            } else {
+                greeting = 'Good evening!';
+            }
+
+            if (greetingElement) {
+                greetingElement.textContent = greeting + ' Welcome to my portfolio,';
+            }
+        });
+    </script>
+</body>
+</html>
